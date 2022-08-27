@@ -15,4 +15,19 @@
 //TODO App events,
 //TODO  Framework reusable/installable core
 
+require_once __DIR__ . '/../vendor/autoload.php';
 
+use app\core\Application;
+
+$app = new Application();
+
+
+$app->router->get('/', function () {
+	return 'HomePage';
+});
+$app->router->get('/todos', function () {
+	return 'Todos';
+});
+
+
+$app->run();
